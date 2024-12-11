@@ -7,7 +7,6 @@ import ReviewCard from "./ReviewCard";
 const FourthPage: React.FC = () => {
   const [currentReview, setCurrentReview] = useState(0);
   const reviewsContainerRef = useRef<HTMLDivElement>(null);
-  const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
   const reviews = [
     {
@@ -35,52 +34,23 @@ const FourthPage: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const duration = 0.7;
-    const interval = 5000; // 5 seconds between slides
+    const isMobile = window.innerWidth < 768;
+    if (isMobile && reviewsContainerRef.current) {
+      gsap.to(reviewsContainerRef.current.children, {
+        x: `${-100 * currentReview}%`,
+        duration: 0.5,
+        ease: "power2.out"
+      });
+    }
+  }, [currentReview]);
 
-    const setupAnimation = () => {
-      if (reviewsContainerRef.current) {
-        if (timelineRef.current) {
-          timelineRef.current.kill();
-        }
+  const nextReview = () => {
+    setCurrentReview((prev) => (prev + 1) % reviews.length);
+  };
 
-        timelineRef.current = gsap.timeline({
-          onComplete: () => {
-            setCurrentReview((prev) => (prev + 1) % reviews.length);
-          }
-        });
-
-        timelineRef.current
-          .to(reviewsContainerRef.current.children[currentReview], {
-            x: "-100%",
-            opacity: 0,
-            duration: duration,
-            ease: "power2.inOut"
-          })
-          .set(reviewsContainerRef.current.children[currentReview], { x: "100%" })
-          .set(
-            reviewsContainerRef.current.children[(currentReview + 1) % reviews.length],
-            { x: "100%", opacity: 1 }
-          )
-          .to(
-            reviewsContainerRef.current.children[(currentReview + 1) % reviews.length],
-            {
-              x: "0%",
-              duration: duration,
-              ease: "power2.inOut"
-            }
-          );
-      }
-    };
-
-    const timer = setTimeout(setupAnimation, interval);
-    return () => {
-      clearTimeout(timer);
-      if (timelineRef.current) {
-        timelineRef.current.kill();
-      }
-    };
-  }, [currentReview, reviews.length]);
+  const prevReview = () => {
+    setCurrentReview((prev) => (prev - 1 + reviews.length) % reviews.length);
+  };
 
   return (
     <div className="bg-background min-h-screen text-text font-body px-6 py-12 md:px-20 md:py-24">
@@ -96,20 +66,37 @@ const FourthPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="mt-12 relative overflow-hidden">
+      {/* Review Section */}
+      <div className="mt-12 relative">
+        {/* Mobile Navigation Buttons */}
+        <div className="flex justify-between mb-4 md:hidden">
+          <button
+            onClick={prevReview}
+            className="bg-primary text-white px-4 py-2 rounded-lg"
+          >
+            Previous
+          </button>
+          <button
+            onClick={nextReview}
+            className="bg-primary text-white px-4 py-2 rounded-lg"
+          >
+            Next
+          </button>
+        </div>
+
+        {/* Reviews Container */}
         <div 
           ref={reviewsContainerRef}
-          className="relative"
+          className="relative overflow-hidden"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className={`
+            flex transition-transform duration-500
+            md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8
+          `}>
             {reviews.map((review, index) => (
               <div 
                 key={index}
-                className="w-full transform transition-transform"
-                style={{
-                  opacity: index === 0 ? 1 : 0,
-                  transform: `translateX(${index === 0 ? '0%' : '100%'})`
-                }}
+                className="w-full flex-shrink-0 px-4 md:px-0"
               >
                 <ReviewCard {...review} />
               </div>
