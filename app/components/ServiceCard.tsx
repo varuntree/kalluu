@@ -25,11 +25,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ image, title, description }) 
       gsap.to(overlayRef.current.querySelector(".description"), {
         opacity: 1,
         duration: 0.3,
+        delay: 0.1,
         ease: "power2.out",
       });
       gsap.to(overlayRef.current.querySelector(".title"), {
         opacity: 0,
-        duration: 0.2,
+        duration: 0.1,
         ease: "power2.out",
       });
     }
@@ -45,12 +46,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ image, title, description }) 
       });
       gsap.to(overlayRef.current.querySelector(".description"), {
         opacity: 0,
-        duration: 0.2,
+        duration: 0.1,
         ease: "power2.out",
       });
       gsap.to(overlayRef.current.querySelector(".title"), {
         opacity: 1,
         duration: 0.3,
+        delay: 0.1,
         ease: "power2.out",
       });
     }
@@ -76,15 +78,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ image, title, description }) 
       <div
         ref={overlayRef}
         className="absolute left-1/2 top-1/2 w-[75%] h-12 transform -translate-x-1/2 -translate-y-1/2 
-                   bg-white/80 backdrop-blur-md rounded-3xl flex items-center justify-center 
+                   bg-white/90 backdrop-blur-md rounded-3xl flex items-center justify-center 
                    text-text font-bold text-sm transition-all duration-300"
       >
-        <div className="opacity-100 title absolute inset-0 flex items-center justify-center">
+        <h3 className="title absolute inset-0 flex items-center justify-center opacity-100">
           {title}
-        </div>
-        <div className="opacity-0 description absolute inset-0 p-4 text-center text-sm font-normal overflow-hidden">
+        </h3>
+        <p className="description absolute inset-0 p-4 text-center text-sm font-normal opacity-0">
           {description}
-        </div>
+        </p>
       </div>
     </div>
   );
