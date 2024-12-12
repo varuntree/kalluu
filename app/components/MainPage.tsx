@@ -3,33 +3,36 @@ import Image from 'next/image';
 
 export default function MainPage() {
   return (
-    <main className="flex flex-col lg:flex-row min-h-screen container mx-auto">
-      {/* Left Section - Text Content */}
-      <div className="flex-1 flex items-center justify-center lg:justify-start p-6 lg:p-12">
+    <main className="relative h-screen w-full overflow-hidden flex flex-col lg:flex-row">
+      {/* Background Image Container */}
+      <div className="absolute inset-0 z-0 h-full w-full">
+        <Image
+          src="/t.png"
+          alt="Cleaning Service Illustration"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
+
+      {/* Text Section */}
+      <div className="relative z-10 flex-1 flex items-center justify-center p-6 lg:p-12 bg-white/80 lg:bg-transparent">
         <div className="text-center lg:text-left max-w-xl">
-          <h1 className="text-4xl lg:text-5xl font-bold font-heading leading-tight mb-4">
+          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-4">
             KALLU <span className="text-primary">CLEANING</span> SERVICE
           </h1>
-          <p className="text-lg lg:text-xl font-body leading-relaxed mb-4">
+          <p className="text-lg lg:text-xl leading-relaxed mb-4">
             Experience the magic of a spotless home or office, crafted with care and professionalism.
           </p>
-          <p className="text-lg lg:text-xl font-body leading-relaxed">
+          <p className="text-lg lg:text-xl leading-relaxed">
             Reliable, Affordable, and Professional Cleaning Services.
           </p>
         </div>
       </div>
 
-      {/* Right Section - Image */}
-      <div className="flex-1 relative h-[400px] lg:h-auto">
-        <Image
-          src="/t.png"
-          alt="Cleaning Service Illustration"
-          fill
-          style={{ objectFit: 'contain' }}
-          priority
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
-      </div>
+      {/* On larger screens, space for image to show distinctly on the right */}
+      <div className="hidden lg:block lg:flex-1" />
     </main>
   );
 }
