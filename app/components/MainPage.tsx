@@ -41,10 +41,13 @@ export default function MainPage() {
 
             {/* Call to Action Buttons */}
             <div className="mt-12 flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-primary text-white rounded-3xl hover:bg-primary/90 transition-colors text-lg font-semibold">
-                Get Started
-              </button>
-              <button className="px-8 py-4 bg-white/10 text-white rounded-3xl hover:bg-white/20 transition-colors text-lg font-semibold backdrop-blur-sm">
+              <a 
+                href="tel:+61426600521"
+                className="w-full md:w-auto px-8 py-4 bg-primary text-white rounded-3xl hover:bg-primary/90 transition-colors text-lg font-semibold text-center"
+              >
+                Call +61 426 600 521
+              </a>
+              <button className="w-full md:w-auto px-8 py-4 bg-white/10 text-white rounded-3xl hover:bg-white/20 transition-colors text-lg font-semibold backdrop-blur-sm">
                 Learn More
               </button>
             </div>
