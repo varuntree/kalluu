@@ -1,10 +1,14 @@
+
 import Image from "next/image";
 
 export default function MainPage() {
   return (
-    <main className="relative  h-screen w-full overflow-hidden flex flex-col lg:flex-row">
-      {/* Background Image Container */}
-      <div className="absolute inset-0 z-0 h-full w-full">
+    <main className="relative min-h-screen w-full overflow-hidden flex flex-col lg:flex-row items-center">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10" />
+
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
         <Image
           src="/main2.png"
           alt="Cleaning Service Illustration"
@@ -12,27 +16,43 @@ export default function MainPage() {
           priority
           className="object-cover"
           sizes="100vw"
+          quality={100}
         />
       </div>
 
-      {/* Text Section */}
-      <div className="relative z-10 flex-1 flex items-center justify-center p-6 lg:p-12 lg:pr-24 bg-white/20 lg:bg-transparent">
-        <div className="text-center lg:text-left max-w-xl">
-          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-4">
-            KALLU <span className="text-primary">CLEANING</span> SERVICE
+      {/* Content Container */}
+      <div className="relative z-20 w-full lg:w-1/2 p-8 lg:p-16 flex flex-col justify-center">
+        <div className="max-w-2xl">
+          <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 text-white">
+            KALLU 
+            <span className="text-primary block mt-2">CLEANING</span>
+            <span className="text-white">SERVICE</span>
           </h1>
-          <p className="text-lg lg:text-xl leading-relaxed mb-4">
-            Experience the magic of a spotless home or office, crafted with care
-            and professionalism.
-          </p>
-          <p className="text-lg lg:text-xl leading-relaxed">
-            Reliable, Affordable, and Professional Cleaning Services.
-          </p>
+          
+          <div className="space-y-4 mt-8">
+            <p className="text-xl lg:text-2xl leading-relaxed text-white/90">
+              Experience the magic of a spotless home or office, crafted with care
+              and professionalism.
+            </p>
+            <p className="text-lg lg:text-xl leading-relaxed text-white/80">
+              Reliable, Affordable, and Professional Cleaning Services.
+            </p>
+          </div>
+
+          {/* Call to Action Buttons */}
+          <div className="mt-12 flex flex-wrap gap-4">
+            <button className="px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-lg font-semibold">
+              Get Started
+            </button>
+            <button className="px-8 py-4 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors text-lg font-semibold backdrop-blur-sm">
+              Learn More
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* On larger screens, space for image to show distinctly on the right */}
-      <div className="hidden lg:block lg:flex-1" />
+      {/* Image Section for larger screens */}
+      <div className="hidden lg:block lg:w-1/2 h-full" />
     </main>
   );
 }
