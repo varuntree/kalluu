@@ -47,9 +47,12 @@ export default function MainPage() {
               >
                 Call +61 426 600 521
               </a>
-              <button className="w-full md:w-auto px-8 py-4 bg-white/10 text-white rounded-3xl hover:bg-white/20 transition-colors text-lg font-semibold backdrop-blur-sm">
-                Learn More
-              </button>
+              <a 
+                href="/contact"
+                className="w-full md:w-auto px-8 py-4 bg-white/10 text-white rounded-3xl hover:bg-white/20 transition-colors text-lg font-semibold backdrop-blur-sm text-center"
+              >
+                Get quote now
+              </a>
             </div>
           </div>
         </div>
