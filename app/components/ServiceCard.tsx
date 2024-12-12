@@ -89,13 +89,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ image, title, description }) 
       <div
         ref={overlayRef}
         className="absolute left-1/2 top-1/2 w-[75%] h-12 transform -translate-x-1/2 -translate-y-1/2 
-                   bg-white/90 backdrop-blur-md rounded-3xl flex items-center justify-center 
-                   text-text font-bold text-sm transition-all duration-300"
+                   bg-white/30 backdrop-blur-md rounded-3xl flex items-center justify-center 
+                   text-text font-semibold text-sm transition-all duration-300"
       >
-        <h3 className="title absolute inset-0 flex items-center justify-center opacity-100 px-4">
+        <h3 className="title absolute inset-0 flex items-center justify-center opacity-100 px-6 text-base">
           {title}
         </h3>
-        <p className="description absolute inset-0 p-4 text-center text-sm font-normal opacity-0">
+        <p className="description absolute inset-0 px-8 py-6 text-center text-sm leading-relaxed opacity-0 overflow-y-auto">
           {description}
         </p>
       </div>
