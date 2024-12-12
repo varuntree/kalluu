@@ -17,7 +17,7 @@ export default function MainPage() {
       </div>
 
       {/* Text Section */}
-      <div className="relative z-10 flex-1 flex items-center justify-center p-6 lg:p-12 bg-white/80 lg:bg-transparent">
+      <div className="relative z-10 flex-1 flex items-center justify-center p-6 lg:p-12 bg-white/20 lg:bg-transparent">
         <div className="text-center lg:text-left max-w-xl">
           <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-4">
             KALLU <span className="text-primary">CLEANING</span> SERVICE

@@ -28,7 +28,7 @@ export default function SecondPage() {
   ];
 
   return (
-    <div className="bg-background min-h-screen p-6 md:p-20">
+    <div className="bg-background min-h-screen p-6 md:p-20 -mt-1">
       <div className="text-center mb-10">
         <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4">
           Our Services
