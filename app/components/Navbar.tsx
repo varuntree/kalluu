@@ -1,16 +1,19 @@
+
 "use client";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const navItems = [
-  { name: "Home", href: "#" },
-  { name: "Services", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Testimonials", href: "#" },
+  { name: "Home", href: "#home" },
+  { name: "Services", href: "#services" },
+  { name: "About", href: "#about" },
+  { name: "Testimonials", href: "#testimonials" },
 ];
 
 export default function Navbar() {
-  // Initialize highlightStyle to hide the highlight element
   const [highlightStyle, setHighlightStyle] = useState<React.CSSProperties>({
     opacity: 0,
     width: 0,
@@ -19,6 +22,16 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navbarRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<HTMLAnchorElement[]>([]);
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const target = href.substring(1);
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: `#${target}`,
+      ease: "power2.inOut"
+    });
+  };
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const target = e.currentTarget;
@@ -40,30 +53,21 @@ export default function Navbar() {
 
   useEffect(() => {
     const tl = gsap.timeline();
-
-    // Animate navbar expansion from the center horizontally
     tl.fromTo(
       navbarRef.current,
       { scaleX: 0, transformOrigin: "center" },
       { scaleX: 1, duration: 1, ease: "power4.out" }
-    )
-      // Animate child items scaling out after navbar expansion
-      .from(
-        itemsRef.current,
-        {
-          scale: 0,
-          opacity: 0,
-          duration: 0.5,
-          stagger: 0.2,
-          ease: "back.out(1.7)",
-        },
-        "-=0.5" // Overlap the animations by 0.5 seconds
-      );
-
-    // Cleanup on unmount
-    return () => {
-      tl.kill();
-    };
+    ).from(
+      itemsRef.current,
+      {
+        scale: 0,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: "back.out(1.7)",
+      },
+      "-=0.5"
+    );
   }, []);
 
   return (
@@ -74,10 +78,8 @@ export default function Navbar() {
                    rounded-b-xl shadow-lg"
         ref={navbarRef}
       >
-        {/* Left: Org Name */}
         <div className="text-2xl font-bold text-gray-900">KLU</div>
 
-        {/* Mobile Toggle Button */}
         <button
           className="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -88,12 +90,10 @@ export default function Navbar() {
           <span className="block w-6 h-0.5 bg-gray-900"></span>
         </button>
 
-        {/* Center: Navigation */}
         <div
           className="relative text-gray-900 font-medium hidden md:flex md:justify-between"
           onMouseLeave={handleMouseLeave}
         >
-          {/* Highlight element */}
           <div
             className="absolute bottom-0 h-full p-4 rounded 
                      bg-secondary/10 backdrop-blur-xl border border-white/20 
@@ -107,6 +107,7 @@ export default function Navbar() {
               href={item.href}
               className="relative p-2 mx-2 z-10 pb-1 transition-colors duration-200 hover:text-blue-700"
               onMouseEnter={handleMouseEnter}
+              onClick={(e) => handleClick(e, item.href)}
               ref={(el) => {
                 if (el) itemsRef.current[index] = el;
               }}
@@ -116,7 +117,6 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Right: Contact Us button */}
         <div className="hidden md:block">
           <a
             href="#"
@@ -131,7 +131,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
       {isMobileMenuOpen && (
         <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-b-xl shadow-lg md:hidden">
           <div className="flex flex-col space-y-2 p-4 text-gray-900 font-medium">
@@ -140,7 +139,10 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 className="py-2 transition-colors duration-200 hover:text-blue-700"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => {
+                  handleClick(e, item.href);
+                  setIsMobileMenuOpen(false);
+                }}
               >
                 {item.name}
               </a>

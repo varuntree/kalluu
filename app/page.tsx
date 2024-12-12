@@ -28,6 +28,7 @@ export default function Home() {
 
   return (
     <div className="relative px-6 lg:px-20">
+      <div id="home">
       {/* Animated Bubble Background */}
       <div
         ref={bubbleRef}
