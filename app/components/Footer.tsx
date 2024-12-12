@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Company Info */}
         <div>
-          <h3 className="text-xl font-bold mb-4">Kallu Cleaning Service</h3>
+          <h3 className="text-xl font-bold mb-4">Kalluu Cleaning Service</h3>
           <p className="mb-2">Your trusted cleaning partner</p>
           <div className="mt-4">
             <p className="mb-1">Email: kalluucleaningservices@gmail.com</p>
@@ -53,7 +53,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="mt-8 pt-4 text-center border-t border-white/20">
-        <p>&copy; 2024 Kallu Cleaning Service. All rights reserved.</p>
+        <p>&copy; 2024 Kalluu Cleaning Service. All rights reserved.</p>
       </div>
     </footer>
   );

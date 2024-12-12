@@ -14,7 +14,7 @@ export default function ThirdPage() {
             Our Strategy to Achieve Our Mission
           </h2>
           <p className="text-white text-base font-body mb-4">
-            At Kallu Cleaning Service, our mission is to deliver exceptional
+            At Kalluu Cleaning Service, our mission is to deliver exceptional
             cleaning solutions that enhance comfort, health, and productivity.
             We achieve this by truly understanding your unique needs and
             tailoring our services accordingly. Our professional team, equipped

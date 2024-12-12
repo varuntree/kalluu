@@ -25,7 +25,7 @@ export default function MainPage() {
         <div className="relative z-20 w-full md:w-1/2 p-8 lg:p-24 lg:pl-32 flex flex-col justify-center">
           <div className="max-w-2xl">
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 text-white">
-              KALLU
+              KALLUU
               <span className="text-primary block mt-2">CLEANING</span>
               <span className="text-white">SERVICE</span>
             </h1>

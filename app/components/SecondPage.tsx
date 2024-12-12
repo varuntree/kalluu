@@ -1,4 +1,3 @@
-
 "use client";
 import React from "react";
 import ServiceCard from "./ServiceCard";
@@ -7,24 +6,28 @@ export default function SecondPage() {
   const services = [
     {
       title: "Domestic Cleaning",
-      description: "Discover the peace of mind that comes with a clean and organized space. Our Domestic Cleaning service is designed to fit your lifestyle, offering professional home cleaning that goes beyond the basics. Whether it's dusting off your cherished bookshelves or ensuring your floors gleam, we tailor our services to make your home a spotless sanctuary where you can truly relax.",
-      image: "/domestic.jpg"
+      description:
+        "Discover the peace of mind that comes with a clean and organized space. Our Domestic Cleaning service is designed to fit your lifestyle, offering professional home cleaning that goes beyond the basics. Whether it's dusting off your cherished bookshelves or ensuring your floors gleam, we tailor our services to make your home a spotless sanctuary where you can truly relax.",
+      image: "/domestic.jpg",
     },
     {
       title: "Commercial Cleaning",
-      description: "For business owners, our Commercial Cleaning service provides the ultimate solution for maintaining a professional and inviting environment. We understand that each commercial space has unique needs, so we offer customized cleaning plans that cover everything from daily upkeep to deep cleaning, ensuring that your premises not only look good but also promote a healthy workplace.",
-      image: "/commercial.png"
+      description:
+        "For business owners, our Commercial Cleaning service provides the ultimate solution for maintaining a professional and inviting environment. We understand that each commercial space has unique needs, so we offer customized cleaning plans that cover everything from daily upkeep to deep cleaning, ensuring that your premises not only look good but also promote a healthy workplace.",
+      image: "/commercial.png",
     },
     {
       title: "Office Cleaning",
-      description: "Our Office Cleaning service is all about enhancing productivity through cleanliness. A clean office space can significantly impact employee morale and efficiency. We meticulously clean from desk spaces to common areas, providing a fresh start every day so your team can focus on what they do best.",
-      image: "/office.jpg"
+      description:
+        "Our Office Cleaning service is all about enhancing productivity through cleanliness. A clean office space can significantly impact employee morale and efficiency. We meticulously clean from desk spaces to common areas, providing a fresh start every day so your team can focus on what they do best.",
+      image: "/office.jpg",
     },
     {
       title: "Medical Cleaning",
-      description: "When it comes to healthcare, cleanliness is not just about appearance; it's about safety and health. Our Medical Cleaning services are specifically designed to meet the stringent standards required in medical environments. From waiting rooms to operating theaters, we ensure that every inch of your facility is sanitized, reducing the risk of infection and promoting a safe environment for both staff and patients.",
-      image: "/medical.jpg"
-    }
+      description:
+        "When it comes to healthcare, cleanliness is not just about appearance; it's about safety and health. Our Medical Cleaning services are specifically designed to meet the stringent standards required in medical environments. From waiting rooms to operating theaters, we ensure that every inch of your facility is sanitized, reducing the risk of infection and promoting a safe environment for both staff and patients.",
+      image: "/medical.jpg",
+    },
   ];
 
   return (
@@ -34,7 +37,9 @@ export default function SecondPage() {
           Our Services
         </h1>
         <p className="text-base md:text-lg text-text leading-normal max-w-3xl mx-auto">
-          At Kallu Cleaning Service, we pride ourselves on delivering top-notch cleaning solutions tailored to your needs. Because a clean space isn't just about hygiene—it's about peace of mind.
+          At Kalluu Cleaning Service, we pride ourselves on delivering top-notch
+          cleaning solutions tailored to your needs. Because a clean space isn't
+          just about hygiene—it's about peace of mind.
         </p>
       </div>
 
