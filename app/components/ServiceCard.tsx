@@ -92,7 +92,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ image, title, description }) 
                    bg-white/90 backdrop-blur-md rounded-3xl flex items-center justify-center 
                    text-text font-bold text-sm transition-all duration-300"
       >
-        <h3 className="title absolute inset-0 flex items-center justify-center opacity-100">
+        <h3 className="title absolute inset-0 flex items-center justify-center opacity-100 px-4">
           {title}
         </h3>
         <p className="description absolute inset-0 p-4 text-center text-sm font-normal opacity-0">
