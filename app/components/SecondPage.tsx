@@ -38,8 +38,8 @@ export default function SecondPage() {
         </h1>
         <p className="text-base md:text-lg text-text leading-normal max-w-3xl mx-auto">
           At Kalluu Cleaning Service, we pride ourselves on delivering top-notch
-          cleaning solutions tailored to your needs. Because a clean space isn't
-          just about hygiene—it's about peace of mind.
+          cleaning solutions tailored to your needs. Because a clean space isn&apos;t
+          just about hygiene—it&apos;s about peace of mind.
         </p>
       </div>
 
