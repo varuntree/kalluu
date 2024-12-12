@@ -8,10 +8,7 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      },
+  	extend: {
   		colors: {
 			'text': '#09090a',
 			'background': '#f5f5f9',
