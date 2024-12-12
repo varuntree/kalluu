@@ -15,16 +15,16 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary text-white py-8 px-4 md:px-8">
+    <footer className="bg-primary rounded-t-3xl text-white py-8 px-4 md:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Company Info */}
         <div>
           <h3 className="text-xl font-bold mb-4">Kallu Cleaning Service</h3>
           <p className="mb-2">Your trusted cleaning partner</p>
           <div className="mt-4">
-            <p className="mb-1">Email: info@kallucleaning.com</p>
-            <p className="mb-1">Phone: (555) 123-4567</p>
-            <p>Address: 123 Clean Street, Sydney NSW 2000</p>
+            <p className="mb-1">Email: kalluucleaningservices@gmail.com</p>
+            <p className="mb-1">Phone: +61 426 600 521</p>
+            <p>Address: 72 Northcote Dr, Para Hils West SA 5096</p>
           </div>
         </div>
 
