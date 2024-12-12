@@ -1,11 +1,10 @@
-
 import Image from "next/image";
 
 export default function MainPage() {
   return (
     <main className="relative min-h-screen w-full overflow-hidden">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10" />
+      <div className="absolute rounded-3xl inset-0 bg-gradient-to-r from-black/50 to-transparent z-10" />
 
       {/* Background Image for mobile */}
       <div className="md:hidden absolute inset-0 z-0">
@@ -26,15 +25,15 @@ export default function MainPage() {
         <div className="relative z-20 w-full md:w-1/2 p-8 lg:p-24 lg:pl-32 flex flex-col justify-center">
           <div className="max-w-2xl">
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 text-white">
-              KALLU 
+              KALLU
               <span className="text-primary block mt-2">CLEANING</span>
               <span className="text-white">SERVICE</span>
             </h1>
-            
+
             <div className="space-y-4 mt-8">
               <p className="text-xl lg:text-2xl leading-relaxed text-white/90">
-                Experience the magic of a spotless home or office, crafted with care
-                and professionalism.
+                Experience the magic of a spotless home or office, crafted with
+                care and professionalism.
               </p>
               <p className="text-lg lg:text-xl leading-relaxed text-white/80">
                 Reliable, Affordable, and Professional Cleaning Services.
@@ -43,10 +42,10 @@ export default function MainPage() {
 
             {/* Call to Action Buttons */}
             <div className="mt-12 flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-lg font-semibold">
+              <button className="px-8 py-4 bg-primary text-white rounded-3xl hover:bg-primary/90 transition-colors text-lg font-semibold">
                 Get Started
               </button>
-              <button className="px-8 py-4 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors text-lg font-semibold backdrop-blur-sm">
+              <button className="px-8 py-4 bg-white/10 text-white rounded-3xl hover:bg-white/20 transition-colors text-lg font-semibold backdrop-blur-sm">
                 Learn More
               </button>
             </div>

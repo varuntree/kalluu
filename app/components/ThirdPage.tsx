@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ThirdPage() {
   return (
-    <section className="rounded-2xl overflow-hidden w-full px-6 py-12 md:px-20 md:py-24 bg-gradient-to-r from-blue-500 to-blue-700 min-h-screen relative">
+    <section className="rounded-2xl overflow-hidden w-full px-6 py-4 md:px-20  bg-gradient-to-r from-blue-500 to-blue-700 min-h-screen relative">
       {/* Fading Top Border */}
       <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-blue-700 to-transparent pointer-events-none z-0"></div>
 
@@ -32,13 +32,16 @@ export default function ThirdPage() {
             approach, we aim not just to clean spaces but to create environments
             where you can thrive.
           </p>
-          <button className="mt-6 px-6 py-3 rounded-md bg-primary hover:bg-secondary text-white transition-colors font-body font-bold">
+          <button className="mt-6 px-6 py-3 rounded-3xl bg-primary hover:bg-accent text-white transition-colors font-body font-bold">
             Explore More
           </button>
         </div>
 
         {/* Right Side Image */}
-        <div className="hidden md:block md:w-1/2 relative" style={{ height: "120vh" }}>
+        <div
+          className="hidden md:block md:w-1/2 relative"
+          style={{ height: "120vh" }}
+        >
           <Image
             src="/cleanerGirl.png"
             alt="Descriptive Alt Text"

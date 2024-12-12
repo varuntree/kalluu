@@ -7,22 +7,22 @@ export default function SecondPage() {
   const services = [
     {
       title: "Domestic Cleaning",
-      description: "Professional home cleaning services tailored to your needs",
+      description: "Discover the peace of mind that comes with a clean and organized space. Our Domestic Cleaning service is designed to fit your lifestyle, offering professional home cleaning that goes beyond the basics. Whether it's dusting off your cherished bookshelves or ensuring your floors gleam, we tailor our services to make your home a spotless sanctuary where you can truly relax.",
       image: "/domestic.jpg"
     },
     {
       title: "Commercial Cleaning",
-      description: "Complete cleaning solutions for commercial spaces",
+      description: "For business owners, our Commercial Cleaning service provides the ultimate solution for maintaining a professional and inviting environment. We understand that each commercial space has unique needs, so we offer customized cleaning plans that cover everything from daily upkeep to deep cleaning, ensuring that your premises not only look good but also promote a healthy workplace.",
       image: "/commercial.png"
     },
     {
       title: "Office Cleaning",
-      description: "Maintain a clean and productive workspace",
+      description: "Our Office Cleaning service is all about enhancing productivity through cleanliness. A clean office space can significantly impact employee morale and efficiency. We meticulously clean from desk spaces to common areas, providing a fresh start every day so your team can focus on what they do best.",
       image: "/office.jpg"
     },
     {
       title: "Medical Cleaning",
-      description: "Specialized cleaning for medical facilities",
+      description: "When it comes to healthcare, cleanliness is not just about appearance; it's about safety and health. Our Medical Cleaning services are specifically designed to meet the stringent standards required in medical environments. From waiting rooms to operating theaters, we ensure that every inch of your facility is sanitized, reducing the risk of infection and promoting a safe environment for both staff and patients.",
       image: "/medical.jpg"
     }
   ];

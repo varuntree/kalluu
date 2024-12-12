@@ -32,7 +32,7 @@ export default function Home() {
       <div
         ref={bubbleRef}
         className="fixed top-0 left-0 w-screen h-screen bg-blue-800/30 
-                   blur-3xl opacity-50 z-0 origin-left"
+                   blur-3xl opacity-50 z-0 origin-right"
         style={{ transform: "scaleX(0.5)" }}
       ></div>
 
