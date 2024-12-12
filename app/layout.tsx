@@ -1,13 +1,13 @@
 
 import type { Metadata } from "next";
-import { Noto_Serif_Yezidi } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import "./globals.css";
 
-const notoSerifYezidi = Noto_Serif_Yezidi({
+const roboto = Roboto({
   weight: ['400', '700'],
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-noto-serif',
+  variable: '--font-roboto',
 });
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${notoSerifYezidi.variable} font-body antialiased`}>
+      <body className={`${roboto.variable} font-body antialiased`}>
         {children}
       </body>
     </html>

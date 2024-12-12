@@ -31,8 +31,8 @@ export default {
 				'5xl': '4.210rem',
 			},
 			fontFamily: {
-				heading: ['var(--font-noto-serif)'],
-				body: ['var(--font-noto-serif)'],
+				heading: ['var(--font-roboto)'],
+				body: ['var(--font-roboto)'],
 			},
 			fontWeight: {
 				normal: '400',
