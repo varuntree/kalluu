@@ -1,11 +1,12 @@
+
 import Image from 'next/image';
 
 export default function MainPage() {
   return (
-    <main className="flex flex-col lg:flex-row h-screen">
-      {/* Left Section - Top-aligned Text Content */}
-      <div className="flex items-start justify-start lg:w-1/2 p-6 lg:pl-64">
-        <div className="text-center lg:text-left">
+    <main className="flex flex-col lg:flex-row min-h-screen container mx-auto">
+      {/* Left Section - Text Content */}
+      <div className="flex-1 flex items-center justify-center lg:justify-start p-6 lg:p-12">
+        <div className="text-center lg:text-left max-w-xl">
           <h1 className="text-4xl lg:text-5xl font-bold font-heading leading-tight mb-4">
             KALLU <span className="text-primary">CLEANING</span> SERVICE
           </h1>
@@ -18,15 +19,15 @@ export default function MainPage() {
         </div>
       </div>
 
-      {/* Right Section - Fullscreen Image */}
-      <div className="lg:w-1/2 h-1/2 lg:h-full relative">
+      {/* Right Section - Image */}
+      <div className="flex-1 relative h-[400px] lg:h-auto">
         <Image
-          src="/t.png" // Path to your transparent image
-          alt="Descriptive Alt Text"
-          layout="fill"
-          objectFit="cover" // Ensures the image covers the entire container
-          objectPosition="center" // Centers the image
-          className="absolute"
+          src="/t.png"
+          alt="Cleaning Service Illustration"
+          fill
+          style={{ objectFit: 'contain' }}
+          priority
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
     </main>
