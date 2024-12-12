@@ -12,32 +12,18 @@ export default function Home() {
   const bubbleRef = useRef(null);
 
   useEffect(() => {
-    // Initial animation from right to left
-    gsap.set(bubbleRef.current, { 
-      scaleX: 1,
-      xPercent: 100 
-    });
-    
-    // Animate from right to left on load
-    gsap.to(bubbleRef.current, {
-      xPercent: 0,
-      duration: 2,
-      ease: "power2.inOut",
-      onComplete: () => {
-        // Start the regular animation after initial load
-        gsap.fromTo(
-          bubbleRef.current,
-          { scaleX: 0 },
-          {
-            scaleX: 1,
-            duration: 5,
-            repeat: -1,
-            yoyo: true,
-            ease: "power2.inOut",
-          }
-        );
-      }
-    });
+    // Animate the bubble: grow from scale 0 to large and then shrink back
+    gsap.fromTo(
+      bubbleRef.current,
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        duration: 5,
+        repeat: -1,
+        yoyo: true,
+        ease: "power2.inOut",
+      },
+    );
   }, []);
 
   return (
@@ -46,7 +32,8 @@ export default function Home() {
       <div
         ref={bubbleRef}
         className="fixed top-0 left-0 w-screen h-screen bg-blue-800/30 
-                   blur-3xl opacity-90 z-0 origin-center"
+                   blur-3xl opacity-50 z-0 origin-left"
+        style={{ transform: "scaleX(0.5)" }}
       ></div>
 
       {/* Navbar Section */}
