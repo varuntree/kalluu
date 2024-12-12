@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function MainPage() {
   return (
-    <main className="relative h-screen w-full overflow-hidden flex flex-col lg:flex-row">
+    <main className="relative  h-screen w-full overflow-hidden flex flex-col lg:flex-row">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0 h-full w-full">
         <Image

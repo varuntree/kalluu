@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ThirdPage() {
   return (
-    <section className="w-full  bg-gradient-to-r from-blue-500 to-blue-700 min-h-screen relative">
+    <section className="rounded-2xl overflow-hidden w-full px-6 py-12 md:px-20 md:py-24 bg-gradient-to-r from-blue-500 to-blue-700 min-h-screen relative">
       {/* Fading Top Border */}
       <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-blue-700 to-transparent pointer-events-none z-0"></div>
 

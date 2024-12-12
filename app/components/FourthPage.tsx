@@ -56,7 +56,7 @@ const FourthPage: React.FC = () => {
   }, [reviews.length]);
 
   return (
-    <div className="bg-background min-h-screen text-text font-body px-6 py-12 md:px-20 md:py-24">
+    <div className=" min-h-screen text-text font-body px-6 py-12 md:px-20 md:py-24">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div>
           <h2 className="title text-4xl md:text-5xl font-bold mb-6">
