@@ -12,8 +12,21 @@ export default function Contact() {
     message: ''
   });
   const [status, setStatus] = useState('');
+  const [phoneError, setPhoneError] = useState('');
+
+  const validatePhone = (phone: string) => {
+    const phoneRegex = /^\+?1?\d{9,15}$/;
+    return phoneRegex.test(phone.replace(/[-\s]/g, ''));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validatePhone(formData.phone)) {
+      setPhoneError('Please enter a valid phone number (e.g., +1234567890)');
+      return;
+    }
+    setPhoneError('');
     e.preventDefault();
     try {
       const response = await fetch('/api/contact', {
@@ -36,7 +49,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="relative px-6 lg:px-20">
+    <div className="relative py-24 px-6 lg:px-20">
       <Navbar />
       <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 pt-20">
         <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
@@ -72,10 +85,16 @@ export default function Contact() {
               <input
                 type="tel"
                 required
-                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2"
+                placeholder="+1234567890"
+                pattern="^\+?1?\d{9,15}$"
+                className={`mt-1 block w-full rounded-md border ${phoneError ? 'border-red-500' : 'border-gray-300'} px-3 py-2`}
                 value={formData.phone}
-                onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                onChange={(e) => {
+                  setFormData({...formData, phone: e.target.value});
+                  setPhoneError('');
+                }}
               />
+              {phoneError && <p className="mt-1 text-sm text-red-500">{phoneError}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700">Message</label>
