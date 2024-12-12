@@ -80,7 +80,7 @@ export default function Navbar() {
       >
         <div 
           className="text-2xl font-bold text-gray-900 cursor-pointer" 
-          onClick={(e) => handleClick(e, '#home')}
+          onClick={() => window.location.href = '/'}
         >
           KLU
         </div>
