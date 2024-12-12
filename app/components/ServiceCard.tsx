@@ -13,48 +13,59 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ image, title, description }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
+  const timeline = useRef<gsap.core.Timeline | null>(null);
 
   const handleMouseEnter = useCallback(() => {
     if (overlayRef.current) {
-      gsap.to(overlayRef.current, {
-        width: "100%",
-        height: "100%",
-        duration: 0.3,
-        ease: "power2.out",
-      });
-      gsap.to(overlayRef.current.querySelector(".description"), {
-        opacity: 1,
-        duration: 0.3,
-        delay: 0.1,
-        ease: "power2.out",
-      });
-      gsap.to(overlayRef.current.querySelector(".title"), {
-        opacity: 0,
-        duration: 0.1,
-        ease: "power2.out",
-      });
+      // Kill any existing animation
+      if (timeline.current) {
+        timeline.current.kill();
+      }
+      
+      timeline.current = gsap.timeline()
+        .to(overlayRef.current, {
+          width: "100%",
+          height: "100%",
+          duration: 0.3,
+          ease: "power2.out"
+        })
+        .to(overlayRef.current.querySelector(".title"), {
+          opacity: 0,
+          duration: 0.2,
+          ease: "power2.out"
+        }, 0)
+        .to(overlayRef.current.querySelector(".description"), {
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out"
+        }, 0.2);
     }
   }, []);
 
   const handleMouseLeave = useCallback(() => {
     if (overlayRef.current) {
-      gsap.to(overlayRef.current, {
-        width: "75%",
-        height: "3rem",
-        duration: 0.3,
-        ease: "power2.out",
-      });
-      gsap.to(overlayRef.current.querySelector(".description"), {
-        opacity: 0,
-        duration: 0.1,
-        ease: "power2.out",
-      });
-      gsap.to(overlayRef.current.querySelector(".title"), {
-        opacity: 1,
-        duration: 0.3,
-        delay: 0.1,
-        ease: "power2.out",
-      });
+      // Kill any existing animation
+      if (timeline.current) {
+        timeline.current.kill();
+      }
+      
+      timeline.current = gsap.timeline()
+        .to(overlayRef.current.querySelector(".description"), {
+          opacity: 0,
+          duration: 0.2,
+          ease: "power2.out"
+        })
+        .to(overlayRef.current, {
+          width: "75%",
+          height: "3rem",
+          duration: 0.3,
+          ease: "power2.out"
+        })
+        .to(overlayRef.current.querySelector(".title"), {
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out"
+        }, 0.2);
     }
   }, []);
 
