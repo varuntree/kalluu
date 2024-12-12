@@ -20,7 +20,7 @@ export default function MainPage() {
       </div>
 
       {/* Right Section - Image */}
-      <div className="flex-1 relative h-[400px] lg:h-auto">
+      <div className="flex-1 relative h-screen">
         <Image
           src="/t.png"
           alt="Cleaning Service Illustration"
