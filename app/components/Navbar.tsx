@@ -119,7 +119,7 @@ export default function Navbar() {
 
         <div className="hidden md:block">
           <a
-            href="#"
+            href="tel:+61426600521"
             className="px-4 py-2 rounded-lg 
                        bg-white/10 backdrop-blur-sm border border-white/20
                        text-gray-900 
@@ -148,7 +148,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#"
+              href="tel:+61426600521"
               className="px-4 py-2 rounded-lg 
                          bg-white/10 backdrop-blur-sm border border-white/20
                          text-gray-900 
