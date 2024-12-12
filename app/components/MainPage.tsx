@@ -5,7 +5,10 @@ export default function MainPage() {
   return (
     <main className="relative min-h-screen w-full overflow-hidden">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10" />
+      <div className="absolute inset-0 z-10">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent blur-xl rounded-3xl" />
+        <div className="absolute inset-0 bg-gradient-radial from-black/30 to-transparent opacity-60" />
+      </div>
 
       {/* Background Image for mobile */}
       <div className="md:hidden absolute inset-0 z-0">
