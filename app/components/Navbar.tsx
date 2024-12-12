@@ -78,7 +78,12 @@ export default function Navbar() {
                    rounded-b-xl shadow-lg"
         ref={navbarRef}
       >
-        <div className="text-2xl font-bold text-gray-900">KLU</div>
+        <div 
+          className="text-2xl font-bold text-gray-900 cursor-pointer" 
+          onClick={(e) => handleClick(e, '#home')}
+        >
+          KLU
+        </div>
 
         <button
           className="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1"
