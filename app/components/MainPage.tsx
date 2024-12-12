@@ -49,7 +49,7 @@ export default function MainPage() {
               </a>
               <a 
                 href="/contact"
-                className="w-full md:w-auto px-8 py-4 bg-white/10 text-white rounded-3xl hover:bg-white/20 transition-colors text-lg font-semibold backdrop-blur-sm text-center"
+                className="w-full md:w-auto px-8 py-4 bg-white/30 text-blue rounded-3xl hover:bg-white/20 transition-colors text-lg  font-semibold backdrop-blur-sm text-center hover:text-white"
               >
                 Get quote now
               </a>

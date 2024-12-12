@@ -14,25 +14,25 @@ export default function Contact() {
   const [status, setStatus] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    // e.preventDefault();
+    // try {
+    //   const response = await fetch('/api/contact', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(formData),
+    //   });
 
-      if (response.ok) {
-        setStatus('Message sent successfully!');
-        setFormData({ name: '', email: '', phone: '', message: '' });
-      } else {
-        setStatus('Failed to send message. Please try again.');
-      }
-    } catch (error) {
-      setStatus('Failed to send message. Please try again.');
-    }
+    //   if (response.ok) {
+    //     setStatus('Message sent successfully!');
+    //     setFormData({ name: '', email: '', phone: '', message: '' });
+    //   } else {
+    //     setStatus('Failed to send message. Please try again.');
+    //   }
+    // } catch (error) {
+    //   setStatus('Failed to send message. Please try again.');
+    // }
   };
 
   return (
@@ -89,7 +89,7 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+              className="w-full bg-blue-600 text-white py-2 px-4 rounded-3xl hover:bg-blue-900"
             >
               Send Message
             </button>
