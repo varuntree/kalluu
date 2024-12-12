@@ -30,7 +30,8 @@ export default function Contact() {
       } else {
         setStatus('Failed to send message. Please try again.');
       }
-    } catch (error) {
+    } catch (error: unknown) {
+      console.error('Form submission failed:', error);
       setStatus('Failed to send message. Please try again.');
     }
   };
