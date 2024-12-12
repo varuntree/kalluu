@@ -33,14 +33,14 @@ export default function Home() {
         ref={bubbleRef}
         className="fixed top-0 left-0 w-[200px] h-[200px] rounded-full bg-blue-800 
                    blur-3xl opacity-50 z-0 origin-center"
-        style={{ transform: 'translate(-50%, -50%)' }}
+        style={{ transform: "translate(-50%, -50%)" }}
       ></div>
 
       {/* Navbar Section */}
       <Navbar />
 
       {/* Main Content Section */}
-      <header className="relative z-10 pt-20">
+      <header className="relative z-10 pt-6">
         <MainPage />
       </header>
       <section>

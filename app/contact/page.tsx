@@ -36,7 +36,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="relative px-6 lg:px-20">
+    <div className="relative px-6 pt-24 lg:px-20">
       <Navbar />
       <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 pt-20">
         <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
