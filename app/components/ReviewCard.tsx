@@ -14,7 +14,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   authorImage,
 }) => {
   return (
-    <div className="flex flex-col bg-white shadow-md rounded-3xl p-4 sm:p-6 ">
+    <div className="flex flex-col bg-white shadow-md rounded-3xl p-4 sm:p-6 h-full w-full min-w-[300px] md:min-w-0">
       <p className="text-gray-800 text-lg italic mb-4">{text}</p>
       <div className="flex items-center mt-auto">
         <img
