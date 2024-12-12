@@ -7,9 +7,6 @@ export default function MainPage() {
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10" />
 
-      {/* Background Image */}
-
-
       {/* Content Container */}
       <div className="relative z-20 w-full lg:w-1/2 p-8 lg:p-24 lg:pl-32 flex flex-col justify-center">
         <div className="max-w-2xl">
@@ -41,20 +38,18 @@ export default function MainPage() {
         </div>
       </div>
 
-      <div className="absolute inset-0 z-0">
+      {/* Image Container */}
+      <div className="relative z-0 w-full lg:w-1/2 h-screen">
         <Image
           src="/main2.png"
           alt="Cleaning Service Illustration"
           fill
           priority
           className="object-cover"
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 50vw"
           quality={100}
         />
       </div>
-
-      {/* Image Section for larger screens */}
-      <div className="hidden lg:block lg:w-1/2 h-full" />
     </main>
   );
 }
