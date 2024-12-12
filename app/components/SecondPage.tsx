@@ -8,42 +8,22 @@ export default function SecondPage() {
     {
       title: "Domestic Cleaning",
       description: "Professional home cleaning services tailored to your needs",
-      image: "/cleanerGirl.png"
+      image: "/domestic.jpg"
     },
     {
       title: "Commercial Cleaning",
       description: "Complete cleaning solutions for commercial spaces",
-      image: "/cleanerGirl.png"
-    },
-    {
-      title: "Window Cleaning",
-      description: "Crystal clear windows with professional cleaning",
-      image: "/window.svg"
-    },
-    {
-      title: "End of Lease Cleaning",
-      description: "Thorough cleaning to ensure bond return",
-      image: "/cleanerGirl.png"
+      image: "/commercial.png"
     },
     {
       title: "Office Cleaning",
       description: "Maintain a clean and productive workspace",
-      image: "/cleanerGirl.png"
-    },
-    {
-      title: "Carpet Cleaning",
-      description: "Deep carpet cleaning and stain removal",
-      image: "/cleanerGirl.png"
-    },
-    {
-      title: "Built-Up Cleaning",
-      description: "Heavy-duty cleaning for built-up areas",
-      image: "/cleanerGirl.png"
+      image: "/office.jpg"
     },
     {
       title: "Medical Cleaning",
       description: "Specialized cleaning for medical facilities",
-      image: "/cleanerGirl.png"
+      image: "/medical.jpg"
     }
   ];
 

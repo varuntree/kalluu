@@ -1,12 +1,12 @@
-"use client"
+"use client";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import Image from "next/image";
 import Navbar from "./components/Navbar";
 import MainPage from "./components/MainPage";
 import SecondPage from "./components/SecondPage";
 import ThirdPage from "./components/ThirdPage";
 import FourthPage from "./components/FourthPage";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const bubbleRef = useRef(null);
@@ -17,17 +17,17 @@ export default function Home() {
       bubbleRef.current,
       { scale: 10 },
       {
-        scale: 0, 
+        scale: 0,
         duration: 10,
         repeat: -1,
         yoyo: true,
-        ease: "power1.inOut"
-      }
+        ease: "power1.inOut",
+      },
     );
   }, []);
 
   return (
-    <div className="relative bg-background  h-screen">
+    <div className="relative bg-background h-screen px-6 lg:px-20">
       {/* Animated Bubble Background */}
       <div
         ref={bubbleRef}
@@ -42,26 +42,6 @@ export default function Home() {
       <header className="relative z-10 pt-20">
         <MainPage />
       </header>
-
-      {/* ***** Add New Sections Below *****
-      
-      For example:
-      <section className="relative z-10 py-20">
-        <h2 className="text-3xl font-bold text-center">Our Services</h2>
-        {/* Add your services content here */}
-      {/* </section>
-    
-      <section className="relative z-10 py-20">
-        <h2 className="text-3xl font-bold text-center">Testimonials</h2>
-        {/* Add testimonials content here */}
-      {/* </section>
-
-      <section className="relative z-10 py-20">
-        <h2 className="text-3xl font-bold text-center">Contact Us</h2>
-        {/* Add contact form or info here */}
-      {/* </section>
-      
-      ***** End of Additional Sections ***** */}
       <section>
         <div>
           <SecondPage></SecondPage>
@@ -73,10 +53,15 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <div >
+        <div>
           <FourthPage></FourthPage>
         </div>
       </section>
+      <footer>
+        <div>
+          <Footer></Footer>
+        </div>
+      </footer>
     </div>
   );
 }
