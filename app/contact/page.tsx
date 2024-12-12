@@ -14,25 +14,25 @@ export default function Contact() {
   const [status, setStatus] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
-    // e.preventDefault();
-    // try {
-    //   const response = await fetch('/api/contact', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(formData),
-    //   });
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    //   if (response.ok) {
-    //     setStatus('Message sent successfully!');
-    //     setFormData({ name: '', email: '', phone: '', message: '' });
-    //   } else {
-    //     setStatus('Failed to send message. Please try again.');
-    //   }
-    // } catch (error) {
-    //   setStatus('Failed to send message. Please try again.');
-    // }
+      if (response.ok) {
+        setStatus('Message sent successfully!');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        setStatus('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      setStatus('Failed to send message. Please try again.');
+    }
   };
 
   return (

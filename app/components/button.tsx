@@ -18,7 +18,8 @@ export const Button: React.FC<ButtonProps> = ({
         'px-4 py-2 rounded-md font-medium transition-colors duration-200',
         variant === 'glass'
           ? 'bg-blue-500 bg-opacity-50 backdrop-filter backdrop-blur-lg hover:bg-opacity-70'
-          : 'bg-gray-800 text-white hover:bg-gray-700'
+          : 'bg-gray-800 text-white hover:bg-gray-700',
+        className
       )}
       {...props}
     />
