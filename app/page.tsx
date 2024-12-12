@@ -15,10 +15,10 @@ export default function Home() {
     // Animate the bubble: grow from scale 0 to large and then shrink back
     gsap.fromTo(
       bubbleRef.current,
-      { scale: 10 },
+      { scale: 0.5 },
       {
-        scale: 0,
-        duration: 10,
+        scale: 2,
+        duration: 8,
         repeat: -1,
         yoyo: true,
         ease: "power1.inOut",
@@ -27,12 +27,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative bg-background h-screen px-6 lg:px-20">
+    <div className="relative px-6 lg:px-20">
       {/* Animated Bubble Background */}
       <div
         ref={bubbleRef}
-        className="absolute top-0 left-0 w-[200px] h-[200px] rounded-full bg-blue-800 
-                   blur-3xl opacity-50 z-0"
+        className="fixed top-0 left-0 w-[200px] h-[200px] rounded-full bg-blue-800 
+                   blur-3xl opacity-50 z-0 origin-center"
+        style={{ transform: 'translate(-50%, -50%)' }}
       ></div>
 
       {/* Navbar Section */}
