@@ -8,20 +8,10 @@ export default function MainPage() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10" />
 
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/main2.png"
-          alt="Cleaning Service Illustration"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-          quality={100}
-        />
-      </div>
+
 
       {/* Content Container */}
-      <div className="relative z-20 w-full lg:w-1/2 p-8 lg:p-16 flex flex-col justify-center">
+      <div className="relative z-20 w-full lg:w-1/2 p-8 lg:p-24 lg:pl-32 flex flex-col justify-center">
         <div className="max-w-2xl">
           <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 text-white">
             KALLU 
@@ -49,6 +39,18 @@ export default function MainPage() {
             </button>
           </div>
         </div>
+      </div>
+
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/main2.png"
+          alt="Cleaning Service Illustration"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+          quality={100}
+        />
       </div>
 
       {/* Image Section for larger screens */}
