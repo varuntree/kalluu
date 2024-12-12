@@ -41,7 +41,7 @@ export default function Home() {
       <Navbar />
 
       {/* Main Content Section */}
-      <header className="relative z-10 pt-6">
+      <header className="relative z-10 pt-8">
         <MainPage />
       </header>
       <section>
@@ -64,6 +64,8 @@ export default function Home() {
           <Footer></Footer>
         </div>
       </footer>
+    </div>
+
     </div>
   );
 }

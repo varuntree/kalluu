@@ -32,8 +32,7 @@ export default function MainPage() {
 
             <div className="space-y-4 mt-8">
               <p className="text-xl lg:text-2xl leading-relaxed text-white/90">
-                Experience the magic of a spotless home or office, crafted with
-                care and professionalism.
+                Experience the magic of a spotless home or office, crafted with care and professionalism.
               </p>
               <p className="text-lg lg:text-xl leading-relaxed text-white/80">
                 Reliable, Affordable, and Professional Cleaning Services.
