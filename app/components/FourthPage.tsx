@@ -77,13 +77,13 @@ const FourthPage: React.FC = () => {
         <div className="flex justify-between mb-4 md:hidden">
           <button
             onClick={prevReview}
-            className="bg-primary text-white px-4 py-2 rounded-lg"
+            className="bg-primary text-white px-4 py-2 rounded-3xl"
           >
             Previous
           </button>
           <button
             onClick={nextReview}
-            className="bg-primary text-white px-4 py-2 rounded-lg"
+            className="bg-primary text-white px-4 py-2 rounded-3xl"
           >
             Next
           </button>
